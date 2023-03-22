@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h1>My Registrations</h1>
+    {% if registrations %}
+        <ul>
+        {% for registration in registrations %}
+            <li>{{ registration.event.name }} - {{ registration.event.date_time }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have not registered for any events yet.</p>
+    {% endif %}
+{% endblock content %}

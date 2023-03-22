@@ -1,0 +1,15 @@
+<!-- search_results.html -->
+
+{% if query %}
+    <h2>Search results for "{{ query }}"</h2>
+{% endif %}
+
+{% if events %}
+    <ul>
+    {% for event in events %}
+        <li><a href="{% url 'event' pk=event.pk %}">{{ event.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No events found</p>
+{% endif %}

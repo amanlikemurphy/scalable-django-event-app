@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h1>My account</h1>
+    <li><a href="{% url 'registrations' %}">My Registrations</a></li>
+    <h2>My Events</h2>
+    {% if created_events %}
+        <div>
+            <ul>
+            {% for event in created_events %}
+                <li>
+                    {{ event.name }} - {{ event.date_time }}
+                    <a href="{% url 'edit_event' event.id %}">Edit</a>
+                    <form action="{% url 'delete_event' event.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <p>You have not created any events yet.</p>
+    {% endif %}
+{% endblock %}

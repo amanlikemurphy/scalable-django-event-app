@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  <h1>Create New Event</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <!-- Include Google Maps API script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABW3NPlatbBFxieYQXGUsK-0G-Gl9Q2gI&libraries=places"></script>
+
+
+    <script>
+      var input = document.getElementById('location-input');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+    </script>
+
+      <!-- Include Flatpickr input fields -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      flatpickr("#id_date_time", {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+      });
+    </script>
+
+    <button type="submit">Create Event</button>
+  </form>
+{% endblock %}
+
+
+AIzaSyABW3NPlatbBFxieYQXGUsK-0G-Gl9Q2gI

@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% load static %}  #load static
+
+{% block content %}
+    <h1>{{event.name}} </h1>
+    <a href="{%url 'attend' event.id%} ">Attend Event</a>
+    {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% if event.featured_image %}
+    <img src="{{ event.featured_image.url }}" alt="{{ event.name }}" class="img-fluid">
+{% endif %}
+
+    <p>{{event.description}}</p>
+    <p>{{event.category}}</p>
+    <p>{{event.location}}</p>
+    <p>{{event.date_time}}</p>
+    <p>Created by: {{ event.creator.first_name }}</p>
+<p>{{ num_attending }} people are attending this event.</p>
+{% endblock content %}

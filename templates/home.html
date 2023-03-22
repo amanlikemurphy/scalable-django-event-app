@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Home Page</h1>
+
+<div>
+    <form method="GET" action="{% url 'search' %}">
+        <input type="text" name="query" placeholder="Search events">
+        <button type="submit">Search</button>
+    </form>
+    
+</div>
+
+<section>
+    <h3>Events</h3>
+
+    <div id="events-lists">
+        {% for event in events %}
+        <a href="{% url 'event' event.id %}">
+            <div>
+            {{event.name}}
+            </div>
+        </a>
+        <p>Date: {{ event.date_time }}</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
