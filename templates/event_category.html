@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h1>Events in {{ category }} category</h1>
+    {% if events %}
+        <ul>
+            {% for event in events %}
+                <li><a href="{% url 'event' event.id %}">{{ event.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No events found in {{ category }} category.</p>
+    {% endif %}
+{% endblock %}

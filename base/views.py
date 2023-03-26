@@ -11,7 +11,8 @@ from django.contrib.auth.decorators import login_required
 #function for homepage.
 def home_page(request): 
     events = Event.objects.all()
-    context = {'events':events}
+    categories = Event.objects.values_list('category', flat=True).distinct()
+    context = {'events':events, 'categories': categories}
     return render(request, 'home.html', context)
 
 #function to view an event.
@@ -20,6 +21,12 @@ def event_page(request, pk):
     num_attending = Registration.objects.filter(event=event).count()
     context = {'event': event, 'num_attending': num_attending}
     return render(request, 'event.html', context)
+
+
+def event_category(request, category):
+    events = Event.objects.filter(category=category)
+    return render(request, 'event_category.html', {'events': events, 'category': category})
+
  
 #function to register for an event.
 @login_required()
