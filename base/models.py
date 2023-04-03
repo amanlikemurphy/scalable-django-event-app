@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+import uuid
 
 
 # Create your models here.
@@ -7,7 +8,8 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     email = models.EmailField(unique=True, null=True)
 
-    #avatar = 
+    id = models.UUIDField(default=uuid.uuid4, unique = True, 
+                          primary_key=True, editable=False)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
@@ -32,6 +34,8 @@ class Event(models.Model):
     featured_image = models.ImageField(blank=True, null=True, default="/images/default.jpg")
     creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name='events_created')
     attendees = models.ManyToManyField(User, through='Registration', related_name='events_attending')
+    id = models.UUIDField(default=uuid.uuid4, unique = True, 
+                          primary_key=True, editable=False)
 
     
     def __str__(self):
@@ -43,6 +47,8 @@ class Registration(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     email = models.EmailField(null=True)
+    id = models.UUIDField(default=uuid.uuid4, unique = True, 
+                          primary_key=True, editable=False)
 
     class Meta:
         unique_together = ('user', 'event')

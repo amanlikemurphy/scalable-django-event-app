@@ -1,21 +1,83 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    <h1>Edit Event</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-            {{ form.as_p }}
+        <!-- event-creation-area start -->
+        <div class="event-creation-area">
+          <div class="container">
+            <h1>Edit Event</h1>
+              <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                  <div class="event-coutsom-container">
+                      <div class="event-info-inner-box">
+                          <h2>Basic Info</h2>
+                          <p>Name your event and tell event-goers why they should come. Add details <br> that highlight what makes it unique.</p>
+                          {{ form.name.label_tag }}
+                          {{ form.name }}
+                          {{ form.description.label_tag }}
+                          {{ form.description }}
+                          <div class="ev-caregory">
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      {{ form.category.label_tag }}
+                                      {{ form.category }}
+                                  </div>
+                                  <div class="col-md-6">
+                                    {{ form.price.label_tag }}
+                                    {{ form.price }}
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="event-coutsom-container">
+                      <div class="event-info-inner-box">
+                          <h2>Location</h2>
+                          <p>Help people in the area discover your event and let attendees know where <br> to show up.</p>
+                          {{ form.location.label_tag }}
+                          {{ form.location }}
+                      </div>
+                  </div>
+                  <div class="event-coutsom-container">
+                      <div class="event-info-inner-box">
+                          <h2>Date and Time</h2>
+                          <p>Tell event-goers when the date and time for your event so they can make <br> plans to attend.</p>
+                          {{ form.date_time.label_tag }}
+                          {{ form.date_time }}
+                      </div>
+                  </div>
+                  <div class="event-coutsom-container">
+                      <div class="event-info-inner-box last-info-box">
+                          <h2>Featured Image</h2>
+                          <p>Show event-goers images of the event location so they can find the place <br> easily</p>
+                          {{ form.featured_image.label_tag }}
+                          {{ form.featured_image }}
+                          </div>
+                      </div>
+                      <div class="event-sub-btnss">
+                        <button type="submit">Save</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <!-- event-creation-area end-->
 
-        <!-- Include Flatpickr input fields -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-      flatpickr("#id_date_time", {
-        enableTime: true,
-        dateFormat: "Y-m-d H:i",
-      });
-    </script>
+<!-- Include Google Maps API script -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABW3NPlatbBFxieYQXGUsK-0G-Gl9Q2gI&libraries=places"></script>
 
-        <button type="submit">Save</button>
-    </form>
+
+<script>
+  var input = document.getElementById('location-input');
+  var autocomplete = new google.maps.places.Autocomplete(input);
+</script>
+
+ <!-- Include Flatpickr input fields -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+ <script>
+   flatpickr("#id_date_time", {
+     enableTime: true,
+     dateFormat: "Y-m-d H:i",
+   });
+ </script>
 {% endblock content %}

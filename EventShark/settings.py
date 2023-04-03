@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,7 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base',
+
     'datetimepicker',
+    'storages',
+    'corsheaders',
 
 ]
 
@@ -50,6 +58,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -83,11 +92,22 @@ WSGI_APPLICATION = 'EventShark.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+   'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get ('name'),
+        'USER': os.environ.get ('user'),
+        'PASSWORD': os.environ.get ('password'),
+        'HOST': os.environ.get ('host'),
+        'PORT': 5432
     }
 }
+
+#DATABASES = {
+    #'default': {
+       # 'ENGINE': 'django.db.backends.sqlite3',
+       # 'NAME': BASE_DIR / 'db.sqlite3',
+   # }
+#}
 
 
 # Password validation
@@ -139,3 +159,11 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_QUERYSTRING_AUTH = False
+
+AWS_S3_ACCESS_KEY_ID = os.environ.get ('access_key_id')
+AWS_S3_SECRET_ACCESS_KEY = os.environ.get ('secret_key')
+AWS_STORAGE_BUCKET_NAME = 'scalable-static'
+AWS_S3_REGION_NAME = 'eu-west-1'

@@ -1,0 +1,37 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<!-- all events area start -->
+<section class="categories-and-events-area">
+    <div class="container">
+        <div class="events-wrapper overflow-hidden">
+            <div class="ct-title">
+                <h2>All Events</h2>
+            </div>
+            <div class="row g-5">
+                {% for event in events %}
+                <div class="col-md-6 col-lg-3 col-sm-6">
+                    <div class="events-items">
+                        <div class="events-img"><img src="{{ event.featured_image.url }}" class="img-fluid" alt=""></div>
+                        <div class="events-items-content">
+                            <h2>{{event.name}}</h2>
+                            <ul class="event-date">
+                                <li>{{ event.date_time }}</li>
+                            </ul>
+                            <p>{{event.location }}</p>
+                            <ul class="event-people">
+                                <li>{{ event.price }}</a></li>
+                                <li>{{ num_attending }} people registered</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+           
+        </div>
+    </div>
+</section>
+
+{% endblock %}

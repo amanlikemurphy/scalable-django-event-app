@@ -1,3 +1,6 @@
+
+
+<!--
 <nav>
     <a href="{% url 'home' %}">Home</a>
 
@@ -10,3 +13,50 @@
 
     {% endif %}
 </nav>
+-->
+
+{% load static %}
+
+<!-- ==== nev area start===== -->
+
+<header>
+    <div class="container ">
+        <nav>
+            <div class="logo-search-wrapper">
+                <div class="menu-logo">
+                    <a href="{% url 'home' %}" class="logo"><img src= "{% static 'images/logo.svg' %}" alt="logo"></a>
+                </div>
+                <div class="header-search-item">
+                    <form method="GET" action="{% url 'search' %}">
+                        <input type="text" name="query" placeholder="Search events">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="menu-btn">
+                {% if request.user.is_authenticated %}
+
+                <ul>
+                   <li><a href="{% url 'account' pk=request.user.pk %}">My Account</a></li>
+                   <li class="menu-li"><a href="{% url 'event_create' %}">Create Event</a></li>
+                   <li class="menu-li"><a href="{% url 'event_list' %}">Event Lists</a></li>
+                   <li class="menu-li"><a href="{% url 'logout' %}">Logout</a></li>
+                </ul>
+            </div>
+
+         {% else %}
+
+            <div class="menu-btn">
+                <ul>
+                    <li class="menu-li"><a href="{% url 'event_list' %}">Event Lists</a></li>
+                    <li class="menu-li"><a href="#">Sign up</a></li>
+                    <li class="menu-li"><a href="{% url 'login' %}">Log in</a></li>
+                </ul>
+            </div>
+            {% endif %}
+        </nav>
+    </div>
+</header>
+
+<!-- ==== nev area start===== -->

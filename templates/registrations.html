@@ -1,14 +1,53 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    <h1>My Registrations</h1>
-    {% if registrations %}
-        <ul>
-        {% for registration in registrations %}
-            <li>{{ registration.event.name }} - {{ registration.event.date_time }}</li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>You have not registered for any events yet.</p>
-    {% endif %}
+
+
+		<!-- Registered events area start -->
+		<section class="registered-event-area">
+			<div class="container">
+				<div class="ac-page-even-title">
+					<h2>My Registrations</h2>
+                    {% if registrations %}
+                        {% for registration in registrations %}
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-6">
+						<div class="ac-page-event-wrapper">
+							<div class="row">
+								<div class="col-lg-3">
+									<div class="ac-even-left-img">
+										<img src="{{ event.featured_image.url }}" class="img-fluid" alt="">
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="ac-even-middle-item">
+                                        <ul class="event-date">
+                                                <li>{{event.date_time}}</li>
+                                        </ul>
+                                        <h2>{{event.name}}</h2>
+                                        <p>{{event.description}}</p>
+                                        <h5>{{event.location}}</h5>
+										<li>March 23, 2023</li>
+									</div>
+								</div>
+								<div class="col-lg-3">
+									<div class="ac-even-right-item">
+										<ul class="ac-even-prices">
+											<li>{{ num_attending }} people registered</li>
+											<li>{{ event.price }}</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+                {% endfor %}
+                {% else %}
+                <p>You have not registered for any events yet.</p>
+            {% endif %}
+			</div>
+		</section>
+		<!-- Registered events area end -->
 {% endblock content %}

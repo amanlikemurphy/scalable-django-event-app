@@ -1,42 +1,74 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<h1>Home Page</h1>
 
-<div class="home-p">
-    <form method="GET" action="{% url 'search' %}">
-        <input type="text" name="query" placeholder="Search events">
-        <button type="submit">Search</button>
-    </form>
-    
-</div>
-
-<section>
-    <h3>Categories</h3>
-    <div>
-        <ul>
-            {% for category in categories %}
-        <p><a href="{% url 'event_category' category %}">{{ category }}</a></p>
-            {% endfor %}
-        </ul>
+<!-- hero-area-start
+<section class="hero-area">
+    <div class="container">
+        <h2>The Ultimate Event Creation Platform <br> to Host Your Events</h2>
+        <p>Whether you're planning a small gathering or a large conference, our platform <br> offers all the tools you need to make your event a success.</p>
+        <div class="hero-btn">
+            <a href="#">Create an event</a>
+        </div>
     </div>
 </section>
+hero-area-end -->
 
-<section>
-    <h3>Events</h3>
+<!-- all events area start -->
+<section class="categories-and-events-area">
+    <div class="container">
+        <div class="ct-title">
+            <h2>Categories</h2>
+        </div>
+        <div class="categories-row">
+            <ul>
+                <li><a href="#"><img src="images/ct-1.svg" alt="">Music</a></li>
+                <li><a href="#"><img src="images/ct-2.svg" alt="">Tech</a></li>
+                <li><a href="#"><img src="images/ct-3.svg" alt="">Business</a></li>
+                <li><a href="#"><img src="images/ct-4.svg" alt="">Food & Eat</a></li>
+                <li><a href="#"><img src="images/ct-5.svg" alt="">Health</a></li>
+                <li><a href="#"><img src="images/ct-6.svg" alt="">Hobbies</a></li>
+                <li><a href="#"><img src="images/ct-7.svg" alt="">Sports & Fitness</a></li>
+                <li><a href="#"><img src="images/ct-6.svg" alt="">Visual Arts</a></li>
+            </ul>
+        </div>
 
-    <div id="events-lists">
-        {% for event in events %}
-        <a href="{% url 'event' event.id %}">
-            <div>
-            {{event.name}}
+        <div class="events-wrapper overflow-hidden">
+            <div class="ct-title">
+                <h2>All Events</h2>
             </div>
-        </a>
-        <p>Date: {{ event.date_time }}</p>
-        <p>Location: {{event.location }}</p>
-        <p>Price: {{ event.price }}</p>
-        
-        {% endfor %}
+            <div class="row g-5">
+                {% for event in events %}
+                <div class="col-md-6 col-lg-3 col-sm-6 event-column"</div>
+                    <div class="events-items">
+                        <div class="events-img"><img src="{{ event.featured_image.url }}" class="img-fluid" alt=""></div>
+                        <div class="events-items-content">
+                            <h2>{{event.name}}</h2>
+                            <ul class="event-date">
+                                <li>{{ event.date_time }}</li>
+                            </ul>
+                            <p>{{event.location }}</p>
+                            <ul class="event-people">
+                                <li>{{ event.price }}</a></li>
+                                <li>{{ num_attending }} people registered</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+           
+        </div>
     </div>
 </section>
+
+<script>
+    var eventColumns = document.querySelectorAll(".event-column");
+    for (var i = 0; i < eventColumns.length; i++) {
+      eventColumns[i].addEventListener("click", function() {
+        window.location.href = "#";
+      });
+    }
+  </script>
+
 {% endblock %}

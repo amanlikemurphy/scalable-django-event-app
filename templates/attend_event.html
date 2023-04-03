@@ -1,6 +1,25 @@
 {% extends 'main.html' %}
 
 {% block content %}
+
+ <!--attend-event-popup-area start -->
+ <section class="attend-event-areau-p">
+    <div class="attend-popup-inner">
+        <h2>Attend Event</h2>
+        <form method="POST">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            <div class="attend-event-sub-btn">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+<!--attend-event-popup-area end -->
+
+
     <h4>Attend {{event.name}}</h4>
     <div>
         <form method="POST">

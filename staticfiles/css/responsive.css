@@ -1,0 +1,751 @@
+/*
+====================================
+Medium Screen - Others
+====================================
+*/
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .categories-row ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px 30px;
+      margin-bottom: 30px;
+  }
+  .header-profile-and-event .menu-btn ul li a {
+      font-size: 13px;
+      margin-right: 29px;
+  }
+  .mobile-search-item input {
+      padding: 15px 20px 15px 34px;
+      background-position: 5% 50%;
+      margin-bottom: 20px;
+  }
+}
+
+/*
+====================================
+Small Screen - Tablate
+====================================
+*/
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  header {
+      width: 100%;
+      padding: 15px 0;
+  }
+  .menu-logo {
+      display: block !important;
+  }
+  .menu-bar {
+      display: block;
+  }
+  .header-search-item {
+      display: none !important;
+      margin-left: 0;
+  }
+  .menu-btn {
+      display: none !important;
+  }
+  .categories-row ul li a {
+      font-weight: 600;
+      font-size: 14px;
+      color: #262627;
+      background: #F4EEE8;
+      display: block;
+      padding: 18px 15px;
+  }
+  .categories-row ul li a img {
+      margin-right: 12px;
+      display: inline-block;
+  }
+  .mobile-menu-btn {
+      display: block !important;
+  }
+  .mobile-search-item {
+      display: block !important;
+      margin-bottom: 20px;
+  }
+  .mobile-search-item input {
+      padding: 15px 20px 15px 34px;
+      background-position: 5% 50%;
+  }
+  .hero-area {
+      background-color: #F4EEE8;
+      padding: 40px 0 62px;
+  }
+  .hero-area h2 {
+      font-weight: 400;
+      font-size: 29px;
+      margin-bottom: 20px;
+  }
+  .hero-area p {
+      font-weight: 400;
+      font-size: 14px;
+      margin-bottom: 28px;
+  }
+  .hero-btn a {
+      font-weight: 500;
+      font-size: 14px;
+      color: #FFFFFF;
+      display: inline-block;
+      padding: 12px 60px;
+      background: #262627;
+      border-radius: 5px;
+      transition: .2s;
+  }
+  .categories-and-events-area {
+      padding: 39px 0 55px 0;
+  }
+  .categories-row ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px 20px;
+      margin-bottom: 30px;
+  }
+  /*==========
+  Logged in user Homepage start
+  =========*/
+  .h-profile-item {
+      margin-right: 10px;
+  }
+  .dropdown-menu {
+      position: absolute;
+      z-index: 1000;
+      display: none;
+      min-width: 12rem;
+      padding: 0;
+      margin: 0;
+      font-size: 1rem;
+      color: #212529;
+      text-align: left;
+      list-style: none;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid rgba(38, 38, 39, 0.26);
+      border-radius: 0rem;
+      top: 20px !important;
+  }
+  /*============
+ Event creation Page start
+ ============== */
+  .event-sub-btnss button {
+      margin-left: 0px;
+  }
+  .paginations a {
+      margin-top: 25px;
+  }
+  .event-info-inner-box {
+      padding: 16px 0;
+  }
+  .event-info-inner-box textarea {
+      margin-bottom: 20px;
+  }
+  .event-info-inner-box input {
+      margin-bottom: 20px;
+  }
+  .ev-caregory select {
+      margin-bottom: 20px;
+  }
+  .moblie-fs {
+      margin-bottom: 20px;
+  }
+  .event-sub-btnss {
+      margin-bottom: 49px;
+  }
+  /* ========
+Account page
+========= */
+  .registered-event-area {
+      padding: 39px 0;
+  }
+  .rs-e-title h2 {
+      font-size: 17px;
+  }
+  .rs-e-title a {
+      margin-bottom: 23px;
+  }
+  .ac-page-even-title h2 {
+      font-size: 20px;
+      margin-bottom: 18px;
+  }
+  .ac-page-event-wrapper {
+      margin-bottom: 30px;
+  }
+  .ac-even-left-img img {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+  .ac-even-middle-item p {
+      font-size: 14px;
+      margin-bottom: 20px;
+  }
+  .ac-even-right-item {
+      padding-right: 0;
+  }
+  .ac-even-middle-item h5 {
+      font-size: 12px;
+      margin-bottom: 22px;
+  }
+  .ac-even-prices {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 15px;
+  }
+  .ac-even-prices li:first-of-type {
+      margin-bottom: 1px;
+  }
+  .ac-even-edits-dl-icon {
+      margin-bottom: 0px;
+      margin-top: -45px;
+  }
+}
+
+/*
+====================================
+Small Screen - Mobile
+====================================
+*/
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  header {
+      width: 100%;
+      padding: 15px 0;
+  }
+  .menu-logo {
+      display: block !important;
+  }
+  .menu-bar {
+      display: block;
+  }
+  .header-search-item {
+      display: none !important;
+      margin-left: 0;
+  }
+  .menu-btn {
+      display: none !important;
+  }
+  .categories-row ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 10px;
+      margin-bottom: 70px;
+  }
+  .categories-row ul li a {
+      font-weight: 600;
+      font-size: 14px;
+      color: #262627;
+      background: #F4EEE8;
+      display: block;
+      padding: 18px 15px;
+  }
+  .categories-row ul li a img {
+      margin-right: 12px;
+      display: inline-block;
+  }
+  .mobile-menu-btn {
+      display: block !important;
+  }
+  .mobile-search-item {
+      display: block !important;
+      margin-bottom: 20px;
+  }
+  .mobile-search-item input {
+      padding: 15px 20px 15px 34px;
+      background-position: 5% 50%;
+  }
+  .hero-area {
+      background-color: #F4EEE8;
+      padding: 13px 0 62px;
+  }
+  .hero-area h2 {
+      font-weight: 400;
+      font-size: 21px;
+      margin-bottom: 15px;
+  }
+  .hero-area p {
+      font-weight: 400;
+      font-size: 14px;
+      margin-bottom: 20px;
+  }
+  .hero-area p br {
+      display: none;
+  }
+  .hero-btn a {
+      font-weight: 500;
+      font-size: 14px;
+      color: #FFFFFF;
+      display: inline-block;
+      padding: 12px 60px;
+      background: #262627;
+      border-radius: 5px;
+      transition: .2s;
+  }
+  .categories-and-events-area {
+      padding: 39px 0 55px 0;
+  }
+  .categories-row ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 10px;
+      margin-bottom: 30px;
+  }
+  /*==========
+  Logged in user Homepage start
+  =========*/
+  .h-profile-item li:nth-child(2) {
+      display: none;
+  }
+  .h-profile-item {
+      margin-right: 10px;
+  }
+  .dropdown-menu {
+      position: absolute;
+      z-index: 1000;
+      display: none;
+      min-width: 12rem;
+      padding: 0;
+      margin: 0;
+      font-size: 1rem;
+      color: #212529;
+      text-align: left;
+      list-style: none;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid rgba(38, 38, 39, 0.26);
+      border-radius: 0rem;
+      top: 20px !important;
+  }
+  /* ===========
+sign up page start
+=========== */
+  .sign-up-left-wrapper::before {
+      content: "";
+      width: 50220%;
+      min-height: 100%;
+  }
+  .sign-up-left-inner {
+      min-height: 0 !important;
+      display: inherit;
+      flex-direction: inherit;
+      align-items: inherit;
+      padding: 50px 0 !important;
+      text-align: center;
+  }
+  .sign-up-left-item h3 {
+      font-family: 'IBM Plex Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 21px;
+      line-height: 29px;
+      text-align: center;
+      color: #F9F7F5;
+      margin-bottom: 32px;
+  }
+  .dev-link {
+      text-align: center;
+      max-width: 350px;
+      margin: 0 auto;
+      padding-top: 51px;
+  }
+  .sign-up-right-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: inherit;
+      padding: 50px 0;
+  }
+  .form-input-item-file {
+      margin-bottom: 48px;
+  }
+  .already-links {
+      text-align: center;
+      margin-top: 30px;
+  }
+  /*============
+ Event creation Page start
+ ============== */
+  .event-sub-btnss button {
+      margin-left: 0px;
+  }
+  .paginations a {
+      margin-top: 25px;
+  }
+  .event-info-inner-box {
+      padding: 16px 0;
+  }
+  .event-info-inner-box textarea {
+      margin-bottom: 20px;
+  }
+  .event-info-inner-box input {
+      margin-bottom: 20px;
+  }
+  .ev-caregory select {
+      margin-bottom: 20px;
+  }
+  .moblie-fs {
+      margin-bottom: 20px;
+  }
+  .event-sub-btnss {
+      margin-bottom: 49px;
+  }
+  /* ========
+Account page
+========= */
+  .registered-event-area {
+      padding: 39px 0;
+  }
+  .rs-e-title h2 {
+      font-size: 17px;
+  }
+  .rs-e-title a {
+      margin-bottom: 23px;
+  }
+  .ac-page-even-title h2 {
+      font-size: 20px;
+      margin-bottom: 18px;
+  }
+  .ac-page-event-wrapper {
+      margin-bottom: 30px;
+  }
+  .ac-even-left-img img {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+  .ac-even-middle-item p {
+      font-size: 14px;
+      margin-bottom: 20px;
+  }
+  .ac-even-right-item {
+      padding-right: 0;
+  }
+  .ac-even-middle-item h5 {
+      font-size: 12px;
+      margin-bottom: 22px;
+  }
+  .ac-even-prices {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 15px;
+  }
+  .ac-even-prices li:first-of-type {
+      margin-bottom: 1px;
+  }
+  .ac-even-edits-dl-icon {
+      margin-bottom: 0px;
+      margin-top: -45px;
+  }
+  /* =========
+Single Event Page start
+=========== */
+  .single-event-area {
+      padding: 30px 0 50px 0;
+  }
+  .singel-event-content h2 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+  }
+  .sng-date {
+      padding: 16px 0;
+  }
+  .singel-event-content h5 {
+      font-weight: 700;
+      font-size: 15px;
+      color: #D7262D;
+      margin-bottom: 20px;
+  }
+  .singel-event-content p {
+      margin-bottom: 22px;
+  }
+  .locations ul li {
+      font-weight: 500;
+      font-size: 19px;
+      margin-bottom: 15px;
+  }
+  .sng-date p {
+      margin-bottom: 6px;
+  }
+}
+
+/*
+====================================
+Xtra Small Screen - Small Mobile
+====================================
+*/
+
+@media screen and (max-width: 576px) {
+  header {
+      width: 100%;
+      padding: 15px 0;
+  }
+  .menu-logo {
+      display: block !important;
+  }
+  .menu-bar {
+      display: block;
+  }
+  .header-search-item {
+      display: none !important;
+      margin-left: 0;
+  }
+  .menu-btn {
+      display: none !important;
+  }
+  .categories-row ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 10px;
+      margin-bottom: 70px;
+  }
+  .categories-row ul li a {
+      font-weight: 600;
+      font-size: 14px;
+      color: #262627;
+      background: #F4EEE8;
+      display: block;
+      padding: 18px 15px;
+  }
+  .categories-row ul li a img {
+      margin-right: 12px;
+      display: inline-block;
+  }
+  .mobile-menu-btn {
+      display: block !important;
+  }
+  .mobile-search-item {
+      display: block !important;
+      margin-bottom: 20px;
+  }
+  .mobile-search-item input {
+      padding: 15px 20px 15px 34px;
+      background-position: 5% 50%;
+  }
+  .hero-area {
+      background-color: #F4EEE8;
+      padding: 13px 0 62px;
+  }
+  .hero-area h2 {
+      font-weight: 400;
+      font-size: 21px;
+      margin-bottom: 15px;
+  }
+  .hero-area p {
+      font-weight: 400;
+      font-size: 14px;
+      margin-bottom: 20px;
+  }
+  .hero-area p br {
+      display: none;
+  }
+  .hero-btn a {
+      font-weight: 500;
+      font-size: 14px;
+      color: #FFFFFF;
+      display: inline-block;
+      padding: 12px 60px;
+      background: #262627;
+      border-radius: 5px;
+      transition: .2s;
+  }
+  .categories-and-events-area {
+      padding: 39px 0 55px 0;
+  }
+  .categories-row ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 10px;
+      margin-bottom: 30px;
+  }
+  /*==========
+  Logged in user Homepage start
+  =========*/
+  .h-profile-item li:nth-child(2) {
+      display: none;
+  }
+  .h-profile-item {
+      margin-right: 10px;
+  }
+  .dropdown-menu {
+      position: absolute;
+      z-index: 1000;
+      display: none;
+      min-width: 12rem;
+      padding: 0;
+      margin: 0;
+      font-size: 1rem;
+      color: #212529;
+      text-align: left;
+      list-style: none;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid rgba(38, 38, 39, 0.26);
+      border-radius: 0rem;
+      top: 20px !important;
+  }
+  /* ===========
+sign up page start
+=========== */
+  .sign-up-left-wrapper::before {
+      content: "";
+      width: 50220%;
+      min-height: 100%;
+  }
+  .sign-up-left-inner {
+      min-height: 0 !important;
+      display: inherit;
+      flex-direction: inherit;
+      align-items: inherit;
+      padding: 50px 0 !important;
+      text-align: center;
+  }
+  .sign-up-left-item h3 {
+      font-family: 'IBM Plex Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 21px;
+      line-height: 29px;
+      text-align: center;
+      color: #F9F7F5;
+      margin-bottom: 32px;
+  }
+  .dev-link {
+      text-align: center;
+      max-width: 350px;
+      margin: 0 auto;
+      padding-top: 51px;
+  }
+  .sign-up-right-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: inherit;
+      padding: 50px 0;
+  }
+  .form-input-item-file {
+      margin-bottom: 48px;
+  }
+  .already-links {
+      text-align: center;
+      margin-top: 30px;
+  }
+  /*============
+ Event creation Page start
+ ============== */
+  .event-sub-btnss button {
+      margin-left: 0px;
+  }
+  .paginations a {
+      margin-top: 25px;
+  }
+  .event-info-inner-box {
+      padding: 16px 0;
+  }
+  .event-info-inner-box textarea {
+      margin-bottom: 20px;
+  }
+  .event-info-inner-box input {
+      margin-bottom: 20px;
+  }
+  .ev-caregory select {
+      margin-bottom: 20px;
+  }
+  .moblie-fs {
+      margin-bottom: 20px;
+  }
+  .event-sub-btnss {
+      margin-bottom: 49px;
+  }
+  /* ========
+Account page
+========= */
+  .registered-event-area {
+      padding: 39px 0;
+  }
+  .rs-e-title h2 {
+      font-size: 17px;
+  }
+  .rs-e-title a {
+      margin-bottom: 23px;
+  }
+  .ac-page-even-title h2 {
+      font-size: 20px;
+      margin-bottom: 18px;
+  }
+  .ac-page-event-wrapper {
+      margin-bottom: 30px;
+  }
+  .ac-even-left-img img {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+  .ac-even-middle-item p {
+      font-size: 14px;
+      margin-bottom: 20px;
+  }
+  .ac-even-right-item {
+      padding-right: 0;
+  }
+  .ac-even-middle-item h5 {
+      font-size: 12px;
+      margin-bottom: 22px;
+  }
+  .ac-even-prices {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 15px;
+  }
+  .ac-even-prices li:first-of-type {
+      margin-bottom: 1px;
+  }
+  .ac-even-edits-dl-icon {
+      margin-bottom: 0px;
+      margin-top: -45px;
+  }
+  /* =========
+profile setting page start
+=========== */
+  .profile-setting-area {
+      padding: 50px 0 132px;
+  }
+  .profile-st-submit-btn button {
+      padding: 12px 60px;
+  }
+  /* =========
+Single Event Page start
+=========== */
+  .single-event-area {
+      padding: 30px 0 50px 0;
+  }
+  .singel-event-content h2 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+  }
+  .sng-date {
+      padding: 16px 0;
+  }
+  .singel-event-content h5 {
+      font-weight: 700;
+      font-size: 15px;
+      color: #D7262D;
+      margin-bottom: 20px;
+  }
+  .singel-event-content p {
+      margin-bottom: 22px;
+  }
+  .locations ul li {
+      font-weight: 500;
+      font-size: 19px;
+      margin-bottom: 15px;
+  }
+  .sng-date p {
+      margin-bottom: 6px;
+  }
+  .sign-up-right-item {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+}

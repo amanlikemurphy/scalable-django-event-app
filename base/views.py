@@ -22,6 +22,11 @@ def event_page(request, pk):
     context = {'event': event, 'num_attending': num_attending}
     return render(request, 'event.html', context)
 
+#function to list all events
+def event_list(request):
+    events = Event.objects.all()
+    return render(request, 'event_list.html', {'events': events})
+
 
 def event_category(request, category):
     events = Event.objects.filter(category=category)
@@ -70,7 +75,6 @@ def account_page(request, pk):
     created_events = Event.objects.filter(creator=user)
     context = {'user':user, 'created_events': created_events,}
     return render(request, 'account.html', context)
-
 
 #function to login to account.
 def login_page(request):

@@ -2,40 +2,65 @@
 
 {% block content %}
 
-    {% if page == 'register' %}
-        <h1>Register</h1>
+    <main class="sign-up-main-area">
+        <div class="coustom-container">
+            <div class="row g-0">
+                {% if page == 'register' %}
+                    <div class="sign-up-right-wrapper">
+                        <div class="sign-up-right-item">
+                            <div class="sign-form-title">
+                                <h2>Eventshark</h2>
+                                <p>Bring your event ideas to life with ease</p>
+                                <form method="POST" action="{% url 'register' %}">
+                                    {% csrf_token %}
+                                    <div class="form-input-item">
+                                        <label for="mail">Email</label>
+                                        <input type="email" name="email" id="mail">
+                                    </div>
+                                    <div class="form-input-item">
+                                        <label for="Passwords">Password</label>
+                                        <input type="password" name="password" id="passwords">
+                                    </div>
+                                    <div class="sign-sumit-btn">
+                                        <button type="submit">Create account</button>
+                                    </div>
+                                </form>                
+                                <div class="already-links">
+                                    <span>Already have an account?<a href="{% url 'login' %}"> Log in</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                {% else %}
+        
+                <div class="sign-up-right-wrapper">
+                    <div class="sign-up-left-item">
+                        <div class="sign-form-title">
+                        <h2>Eventshark</h2>
+                        <p>Log in back to your account</p>
+                    <form method="POST" action="{% url 'login' %}">
+                        {% csrf_token %}
+                            <div class="form-input-item">
+                                <label for="mail">Email</label>
+                                <input type="email" name="email" id="mail">
+                            </div>
+                            <div class="form-input-item">
+                                <label for="Passwords">Password</label>
+                                <input type="password" name="password" id="passwords">
+                            </div>
+                            <div class="sign-sumit-btn sign-in-btnss">
+                                <button type="submit" value>Log in to Eventshark</button>
+                            </div>
+                    </form>
+                        <div class="already-links">
+                            <span>Don't have an account?<a href="{% url 'register' %}"> Sign Up</a></span>
+                        </div>
+                 </div>
 
-        <div>
-            <form method="POST" action="{% url 'register' %}">
-                {% csrf_token %}
-                {{form.as_p}}
-                <input type="submit" value="Register"/>
-            </form>
+                {% endif %}
+            </div>
         </div>
-
-        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
-    {% else %}
-        <h1>Login User</h1>
-
-        <form method="POST" action="{% url 'login' %}">
-            {% csrf_token %}
-
-            <div>
-                
-                <label>Email</label>
-                <input type="email" name="email"/>
-
-                <label>Password</label>
-                <input type="password" name="password"/>
-            </div>
-
-            <div>
-                <input type="submit" value="Login">
-            </div>
-
-            <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
-        </form>
-    {% endif %}
-
+    </main>
 
 {% endblock content %}
