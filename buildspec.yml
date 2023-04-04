@@ -1,19 +1,5 @@
 version: 0.2
 
-env:
-  secrets-manager:
-    NAME: name
-    POSTGRES_USER: user
-    PASSWORD: password
-    HOST: host
-    AWS_ACCESS_KEY_ID: access_key_id
-    AWS_SECRET_ACCESS_KEY: secret_key
-    AWS_STORAGE_BUCKET_NAME: bucket_name
-
-  plaintext:
-    AWS_STORAGE_BUCKET_NAME : scalable-static
-    AWS_S3_REGION_NAME : eu-west-1
-
 phases:
   install:
     runtime-versions:
@@ -32,7 +18,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Running tests
-      - python3 manage.py test
+      - source .env && python manage.py test
 
   post_build:
     commands:
