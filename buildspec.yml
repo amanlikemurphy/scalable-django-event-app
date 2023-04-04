@@ -1,6 +1,6 @@
 version: 0.2
 
-env:
+environment_variables:
   plaintext:
   AWS_S3_ACCESS_KEY_ID: AKIASOPM7MW2C6ZEIGFZ
   AWS_S3_SECRET_ACCESS_KEY: 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
@@ -21,7 +21,6 @@ phases:
 
   pre_build:
     commands:
-      - cp /eventshark/.env /eventsharkbuild/
       - echo Collecting static files...
       - python manage.py collectstatic --no-input
 
