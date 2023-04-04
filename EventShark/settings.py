@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-3l-_*^i!i441mydqxn=kz#(glftj@5nd-if+3f7hdbj+e+gqs9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'eventshark.eu-west-1.elasticbeanstalk.com', 'http://eventshark.eu-west-1.elasticbeanstalk.com']
 
 AUTH_USER_MODEL = 'base.User'
 
