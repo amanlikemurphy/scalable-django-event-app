@@ -2,14 +2,14 @@ version: 0.2
 
 environment_variables:
   plaintext:
-  AWS_S3_ACCESS_KEY_ID: AKIASOPM7MW2C6ZEIGFZ
-  AWS_S3_SECRET_ACCESS_KEY: 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
-  AWS_STORAGE_BUCKET_NAME: scalable-static
-  AWS_S3_REGION_NAME: eu-west-1
-  NAME: eventshark
-  PASSWORD: Goodness517
-  USER: manlikemurphy
-  HOST: database-1.ci1w6kxatsgi.eu-west-1.rds.amazonaws.com
+    AWS_S3_ACCESS_KEY_ID: AKIASOPM7MW2C6ZEIGFZ
+    AWS_S3_SECRET_ACCESS_KEY: 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
+    AWS_STORAGE_BUCKET_NAME: scalable-static
+    AWS_S3_REGION_NAME: eu-west-1
+    NAME: eventshark
+    PASSWORD: Goodness517
+    USER: manlikemurphy
+    HOST: database-1.ci1w6kxatsgi.eu-west-1.rds.amazonaws.com
 
 phases:
   install:
