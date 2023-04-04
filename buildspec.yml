@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.10.7
+    commands:
+      - echo Installing dependencies...
+      - pip install -r requirements.txt
+
+  pre_build:
+    commands:
+      - cp /eventshark/.env /eventsharkbuild/
+      - echo Collecting static files...
+      - python manage.py collectstatic --no-input
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Running tests
+      - python3 manage.py test
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
