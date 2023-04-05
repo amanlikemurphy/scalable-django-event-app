@@ -10,6 +10,7 @@ environment_variables:
     PASSWORD: Goodness517
     USER: manlikemurphy
     HOST: database-1.ci1w6kxatsgi.eu-west-1.rds.amazonaws.com
+    PORT: 5432
 
 phases:
   install:
