@@ -96,21 +96,21 @@ WSGI_APPLICATION = 'EventShark.wsgi.application'
 
 #DATABASES = {
    #'default': {
-       # 'ENGINE': 'django.db.backends.postgresql',
-       # 'NAME': os.environ.get ('name'),
-       # 'USER': os.environ.get ('user'),
-       # 'PASSWORD': os.environ.get ('password'),
-       # 'HOST': os.environ.get ('host'),
+       #'ENGINE': 'django.db.backends.postgresql',
+       #'NAME': os.environ.get ('name'),
+       #'USER': os.environ.get ('user'),
+       #'PASSWORD': os.environ.get ('password'),
+       #'HOST': os.environ.get ('host'),
         #'PORT': 5432
     #}
 #}
 
-#DATABASES = {
-    #'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-    #}
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
