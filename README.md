@@ -42,7 +42,10 @@ The aim of this project was to create a cloud-based web application that enables
 - **Cloud Storage**: AWS S3
 
 - **API Development**: Django REST framework
-  
+
+  Here is the architectural diagram for the application:
+
+![Diagram](Archi.jpg)
 
 ## Deployment
 
